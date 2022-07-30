@@ -16,7 +16,7 @@ const theme = extendTheme({
         sectionTitle: (props: StyleFunctionProps) => ({
           borderBottomWidth: 2,
           borderStyle: 'solid',
-          borderColor: props.colorMode === 'light' ? 'teal.800' : 'blue.200',
+          borderColor: props.colorMode === 'light' ? 'teal.500' : 'blue.200',
           fontSize: '2xl',
           fontWeight: 'normal',
           pb: 2,
@@ -35,7 +35,7 @@ const theme = extendTheme({
           py: 2,
           border: 'solid 2px',
           textAlign: 'center',
-          color: props.colorMode === 'light' ? 'teal.800' : 'blue.200',
+          color: props.colorMode === 'light' ? 'teal.500' : 'blue.200',
         }),
       },
     },

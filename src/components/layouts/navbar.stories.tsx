@@ -28,6 +28,13 @@ Home.story = {
   },
 }
 
+export const Works = Template.bind({})
+Works.story = {
+  parameters: {
+    nextRouter: { pathname: '/works' },
+  },
+}
+
 export const Others = Template.bind({})
 Others.story = {
   parameters: {

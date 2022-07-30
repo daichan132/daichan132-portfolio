@@ -13,7 +13,7 @@ type NavLinkProps = {
 const NavLink = (props: NavLinkProps & LinkProps) => {
   const { href, path, target, children, ...rest } = props
   const active = path === href
-  const activateColor = useColorModeValue('teal.700', 'blue.200')
+  const activateColor = useColorModeValue('teal.500', 'blue.200')
   return (
     <MotionBox whileHover={{ opacity: 0.8, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
       <ChakraNextLink
