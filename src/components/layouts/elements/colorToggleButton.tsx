@@ -1,13 +1,15 @@
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+
+import MotionBox from '@/components/common/motionBox'
 
 const ColorToggleButton = () => {
   const { toggleColorMode } = useColorMode()
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
-      <motion.div
+      <MotionBox
         key={useColorModeValue('light', 'dark')}
         initial={{ opacity: 0, y: '-10%' }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +24,7 @@ const ColorToggleButton = () => {
           rounded='100'
           size='sm'
         />
-      </motion.div>
+      </MotionBox>
     </AnimatePresence>
   )
 }

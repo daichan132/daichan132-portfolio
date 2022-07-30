@@ -3,21 +3,23 @@ import React from 'react'
 import { Box, Heading, Table, TableContainer, Tbody, Td, Tr, Text, Stack } from '@chakra-ui/react'
 
 const Biography = () => (
-  <Box>
-    <Heading variant='sectionTitle' fontSize='xl'>
-      Biography
-    </Heading>
-    <Stack py={3} px={3}>
-      <Text variant='callout'>I am learning about algorithms in a Japanese university.</Text>
-      <TableContainer py={3}>
-        <Table variant='unstyled' size='sm'>
+  <Box pt={7}>
+    <Heading variant='sectionTitle'>Biography</Heading>
+    <Stack py={3}>
+      <Text variant='callout'>Hi, I am a university student studying algorithms in Japan!</Text>
+      <TableContainer pt={5}>
+        <Table variant='biography' size='sm'>
           <Tbody>
             <Tr>
-              <Td>2019</Td>
+              <Td>
+                <Text fontWeight='bold'>2019</Text>
+              </Td>
               <Td>Enrolled in a Japanese university</Td>
             </Tr>
             <Tr>
-              <Td> 2022 to present</Td>
+              <Td>
+                <Text fontWeight='bold'>2022 to present</Text>
+              </Td>
               <Td>University Student</Td>
             </Tr>
           </Tbody>

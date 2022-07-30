@@ -12,7 +12,7 @@ const Hamburger = styled.div`
 const Bar = styled.span`
   padding: 0;
   width: 25px;
-  height: 1px;
+  height: 2px;
   display: block;
   border-radius: 4px;
   transition: all 0.25s ease-in-out;

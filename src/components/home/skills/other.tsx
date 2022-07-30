@@ -14,11 +14,11 @@ import {
   ModalFooter,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FaPython } from 'react-icons/fa'
+import { FaRegSquare } from 'react-icons/fa'
 
 import MotionBox from '@/components/common/motionBox'
 
-const PythonIcon = () => {
+const OtherIcon = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
@@ -28,7 +28,7 @@ const PythonIcon = () => {
         whileHover={{ opacity: 0.8, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <Icon as={FaPython} w='100%' h='100%' onClick={onOpen} />
+        <Icon as={FaRegSquare} w='100%' h='100%' onClick={onOpen} />
       </MotionBox>
 
       <Modal isCentered onClose={onClose} isOpen={isOpen} size='sm'>
@@ -47,28 +47,16 @@ const PythonIcon = () => {
             style={{ position: 'relative' }}
           >
             <ModalHeader fontSize='md' fontWeight='normal' mt={2}>
-              Python Skills
+              Other Skills
             </ModalHeader>
             <ModalCloseButton mr={3} mt={2} />
             <ModalBody>
               <Grid gridTemplateColumns='repeat(2,1fr)' gap={3}>
                 <GridItem>
-                  <Text variant='skill'>FastAPI</Text>
+                  <Text variant='skill'>Docker</Text>
                 </GridItem>
                 <GridItem>
-                  <Text variant='skill'>PyTorch</Text>
-                </GridItem>
-                <GridItem>
-                  <Text variant='skill'>Hugging Face</Text>
-                </GridItem>
-                <GridItem>
-                  <Text variant='skill'>Flask</Text>
-                </GridItem>
-                <GridItem>
-                  <Text variant='skill'>Streamlit</Text>
-                </GridItem>
-                <GridItem>
-                  <Text variant='skill'>pytest</Text>
+                  <Text variant='skill'>Git</Text>
                 </GridItem>
               </Grid>
             </ModalBody>
@@ -80,4 +68,4 @@ const PythonIcon = () => {
   )
 }
 
-export default PythonIcon
+export default OtherIcon

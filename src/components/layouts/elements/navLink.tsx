@@ -1,7 +1,7 @@
 import { LinkProps, useColorModeValue } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 
 import ChakraNextLink from '@/components/common/chakraNextLink'
+import MotionBox from '@/components/common/motionBox'
 
 type NavLinkProps = {
   href: string
@@ -13,9 +13,9 @@ type NavLinkProps = {
 const NavLink = (props: NavLinkProps & LinkProps) => {
   const { href, path, target, children, ...rest } = props
   const active = path === href
-  const activateColor = useColorModeValue('teal.600', 'blue.200')
+  const activateColor = useColorModeValue('teal.700', 'blue.200')
   return (
-    <motion.button whileHover={{ opacity: 0.8, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+    <MotionBox whileHover={{ opacity: 0.8, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
       <ChakraNextLink
         href={href}
         target={target}
@@ -25,12 +25,12 @@ const NavLink = (props: NavLinkProps & LinkProps) => {
         textDecoration={active ? 'underline' : undefined}
         textDecorationColor={active ? activateColor : undefined}
         textUnderlineOffset='3px'
-        textDecorationThickness='1px'
+        textDecorationThickness='2px'
         {...rest}
       >
         {children}
       </ChakraNextLink>
-    </motion.button>
+    </MotionBox>
   )
 }
 

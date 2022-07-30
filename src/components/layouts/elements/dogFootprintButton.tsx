@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion'
-
 import ChakraNextImage from '@/components/common/chakraNextImage'
 import ChakraNextLink from '@/components/common/chakraNextLink'
+import MotionBox from '@/components/common/motionBox'
 
 const DogFootprintButton = ({ colorMode }: { colorMode: string }) => (
   <ChakraNextLink href='/' style={{ textDecoration: 'none' }} as='div'>
-    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+    <MotionBox whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
       {colorMode === 'light' ? (
         <ChakraNextImage
           src='/blackDogFootprint.svg'
@@ -21,7 +20,7 @@ const DogFootprintButton = ({ colorMode }: { colorMode: string }) => (
           width='30px'
         />
       )}
-    </motion.div>
+    </MotionBox>
   </ChakraNextLink>
 )
 

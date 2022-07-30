@@ -10,8 +10,9 @@ import {
   useBreakpointValue,
   VStack,
 } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
+
+import MotionBox from '@/components/common/motionBox'
 
 import ColorToggleButton from './elements/colorToggleButton'
 import DogFootprintButton from './elements/dogFootprintButton'
@@ -21,7 +22,7 @@ import NavLink from './elements/navLink'
 const Navbar = () => {
   /* --------------------------- chakra uiのcolorの設定 --------------------------- */
   const { colorMode } = useColorMode()
-  const bgColor = useColorModeValue('#ffffffd0', '#202023d0')
+  const bgColor = useColorModeValue('whiteAlpha.800', 'blackAlpha.300')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   /* -------------------------------- routeの設定 -------------------------------- */
   const router = useRouter()
@@ -74,17 +75,19 @@ const Navbar = () => {
         <Spacer />
 
         <Box display={{ base: 'none', md: 'inline-block' }}>
-          <NavLink href='/' path={path} fontWeight='bold'>
-            Home
-          </NavLink>
-          <NavLink
-            href='/portfolio'
-            path={path}
-            fontWeight='bold'
-            onClick={() => setOpenMenu(!isOpenMenu)}
-          >
-            Portfolio
-          </NavLink>
+          <HStack>
+            <NavLink href='/' path={path} fontWeight='bold'>
+              Home
+            </NavLink>
+            <NavLink
+              href='/works'
+              path={path}
+              fontWeight='bold'
+              onClick={() => setOpenMenu(!isOpenMenu)}
+            >
+              Works
+            </NavLink>
+          </HStack>
         </Box>
 
         <HStack display={{ base: 'inline-block', md: 'none' }}>
@@ -94,7 +97,7 @@ const Navbar = () => {
         <ColorToggleButton />
       </Container>
       {isOpenMenu && isBreakpoint ? (
-        <motion.div
+        <MotionBox
           initial={{ opacity: 0, y: '-20%' }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
@@ -109,15 +112,15 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              href='/portfolio'
+              href='/works'
               path={path}
               fontWeight='bold'
               onClick={() => setOpenMenu(!isOpenMenu)}
             >
-              Portfolio
+              Works
             </NavLink>
           </VStack>
-        </motion.div>
+        </MotionBox>
       ) : (
         <Box />
       )}

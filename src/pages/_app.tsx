@@ -1,6 +1,5 @@
+import Layout from '@/components/layouts/mainLayout'
 import AppProvider from '@/providers/app'
-
-import Layout from '../components/layouts/mainLayout'
 
 import type { AppProps } from 'next/app'
 import 'fontsource-noto-sans-jp'

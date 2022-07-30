@@ -16,22 +16,23 @@ import {
 import { motion } from 'framer-motion'
 import { FaReact } from 'react-icons/fa'
 
+import MotionBox from '@/components/common/motionBox'
+
 const ReactIcon = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
-      <Box
+      <MotionBox
         _hover={{ cursor: 'pointer' }}
         boxSize='50px'
-        as={motion.div}
         whileHover={{ opacity: 0.8, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
         <Icon as={FaReact} w='100%' h='100%' onClick={onOpen} />
-      </Box>
+      </MotionBox>
 
       <Modal isCentered onClose={onClose} isOpen={isOpen} size='sm'>
-        <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(5px) hue-rotate(30deg)' />
+        <ModalOverlay bg='blackAlpha.300' backdropFilter='blur(5px) hue-rotate(-30deg)' />
         <ModalContent>
           <motion.article
             initial='hidden'
@@ -65,6 +66,9 @@ const ReactIcon = () => {
                 </GridItem>
                 <GridItem>
                   <Text variant='skill'>Chakra UI</Text>
+                </GridItem>
+                <GridItem>
+                  <Text variant='skill'>Bootstrap</Text>
                 </GridItem>
               </Grid>
             </ModalBody>

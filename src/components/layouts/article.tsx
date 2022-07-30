@@ -6,17 +6,15 @@ const Article = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
   const path = router.pathname
   return (
-    <AnimatePresence key={path} exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
+    <AnimatePresence key={path} onExitComplete={() => window.scrollTo(0, 0)}>
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
+        exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
-        <Container maxW='container.md' pt='70px' pb={20}>
-          {children}
-        </Container>
-      </motion.div>
+        <Container maxW='container.md'>{children}</Container>
+      </motion.article>
     </AnimatePresence>
   )
 }

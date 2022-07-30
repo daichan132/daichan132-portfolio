@@ -1,81 +1,71 @@
-import { Flex, Heading, useColorMode, Text } from '@chakra-ui/react'
+import { Flex, useColorMode, Box } from '@chakra-ui/react'
 
 import MotionBox from '@/components/common/motionBox'
-
-import ChakraNextImage from '../common/chakraNextImage'
+import WavyText from '@/components/common/wavyText'
 
 const Title = () => {
   const { colorMode } = useColorMode()
-
   return (
-    <MotionBox
-      drag
-      dragConstraints={{
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-      }}
-      dragSnapToOrigin
-      dragElastic={0.2}
-      dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
-    >
-      <Flex
-        justify='center'
-        align='center'
-        flexDirection='column'
-        position='relative'
-        height='250px'
-        mt={7}
+    <Flex justify='center' align='center' position='relative' py={5}>
+      <MotionBox
+        zIndex={1}
+        drag
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+        dragSnapToOrigin
+        dragTransition={{ bounceStiffness: 50, bounceDamping: 2 }}
+        dragElastic={0.1}
       >
-        {/* outlibe */}
-        <MotionBox
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          height='210px'
-          width='210px'
-          border='solid 1px'
-          borderRadius='100%'
-          zIndex={3}
-          bg='transparent'
-          color={colorMode === 'light' ? 'teal.600' : 'blue.400'}
-        />
-        {/* title */}
-        <MotionBox position='absolute' zIndex='2'>
-          <Heading
-            fontSize='2xl'
-            bgGradient={
-              colorMode === 'light'
-                ? 'linear(to-l, teal.300, teal.100)'
-                : 'linear(to-l, blue.400, blue.200)'
-            }
-            bgClip='text'
-          >
-            <Text>daichan132</Text>
-          </Heading>
-        </MotionBox>
-        {/* image */}
-        <MotionBox
-          position='absolute'
-          zIndex='1'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-          }}
-        >
-          <ChakraNextImage
-            src='/kyoto.jpg'
-            alt='kyoto'
-            height='200px'
-            width='200px'
+        <Flex justify='center' align='center'>
+          {/* outline */}
+          <MotionBox
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.99 }}
+            height='210px'
+            width='210px'
+            border='solid 2px'
             borderRadius='100%'
-            filter='auto'
-            brightness={colorMode === 'light' ? '50%' : '40%'}
+            zIndex={3}
+            color={colorMode === 'light' ? 'gray.50' : 'gray.900'}
           />
-        </MotionBox>
-      </Flex>
-    </MotionBox>
+
+          {/* title */}
+          <Box position='absolute' zIndex={2} fontSize='xl' fontWeight='bold'>
+            <WavyText text='daichan132' delay={0.5} />
+          </Box>
+
+          {/* innerCircle */}
+          <Box position='absolute'>
+            <Flex
+              height='200px'
+              width='200px'
+              bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
+              borderRadius='100%'
+            />
+          </Box>
+        </Flex>
+      </MotionBox>
+      {/* bgCirle */}
+      <MotionBox
+        position='absolute'
+        initial={{ scale: 0.7 }}
+        animate={{ scale: 1 }}
+        transition={{
+          delay: 1.7,
+        }}
+      >
+        <Flex
+          height='230px'
+          width='230px'
+          bg={colorMode === 'light' ? 'gray.900' : 'gray.100'}
+          borderRadius='100%'
+        />
+      </MotionBox>
+    </Flex>
   )
 }
 

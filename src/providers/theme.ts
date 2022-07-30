@@ -14,11 +14,12 @@ const theme = extendTheme({
     Heading: {
       variants: {
         sectionTitle: (props: StyleFunctionProps) => ({
-          borderBottomWidth: 1,
+          borderBottomWidth: 2,
           borderStyle: 'solid',
-          borderColor: props.colorMode === 'light' ? 'teal.500' : 'blue.200',
-          py: 2,
-          px: 1,
+          borderColor: props.colorMode === 'light' ? 'teal.800' : 'blue.200',
+          fontSize: '2xl',
+          fontWeight: 'normal',
+          pb: 2,
         }),
       },
     },
@@ -26,18 +27,26 @@ const theme = extendTheme({
       variants: {
         callout: (props: StyleFunctionProps) => ({
           textAlign: 'center',
-          bg: props.colorMode === 'light' ? 'gray.100' : 'gray.700',
+          bg: props.colorMode === 'light' ? 'gray.200' : 'gray.700',
           borderRadius: 'lg',
-          fontWeight: 'bold',
-          py: 3,
+          p: 3,
         }),
         skill: (props: StyleFunctionProps) => ({
           py: 2,
-          border: 'solid 1px',
+          border: 'solid 2px',
           textAlign: 'center',
-          color: props.colorMode === 'light' ? 'teal.600' : 'blue.200',
-          fontSize: 'sm',
+          color: props.colorMode === 'light' ? 'teal.800' : 'blue.200',
         }),
+      },
+    },
+    Table: {
+      parts: ['td'],
+      variants: {
+        biography: {
+          td: {
+            fontSize: 'md',
+          },
+        },
       },
     },
   },
